@@ -1835,6 +1835,39 @@ body::before {
   color: var(--c-text-muted);
 }
 
+/* =====================
+   HERO PDF BUTTON
+   ===================== */
+.hero-pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-sm);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--r-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--c-gold-light);
+  border: 1px solid rgba(212,168,67,0.35);
+  background: rgba(212,168,67,0.08);
+  box-shadow: 0 4px 20px rgba(212,168,67,0.15);
+  transition: transform var(--t-fast), background var(--t-fast), color var(--t-fast), border-color var(--t-fast), box-shadow var(--t-fast);
+  margin-top: var(--sp-md);
+  width: fit-content;
+  max-width: 100%;
+}
+.hero-pdf-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--c-gold), #c77b2f);
+  color: #0a0d14;
+  border-color: transparent;
+  box-shadow: 0 6px 24px rgba(212,168,67,0.4);
+}
+.pdf-icon {
+  font-size: 1.1rem;
+}
+
 /* push main content up so bar doesn't overlap footer */
 body { padding-bottom: 85px; }
 
