@@ -71,6 +71,7 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
+  touch-action: manipulation;
 }
 
 body {
@@ -80,6 +81,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   line-height: 1.6;
+  touch-action: manipulation;
 }
 
 /* ===== CHESS BOARD BACKGROUND PATTERN ===== */
