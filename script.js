@@ -265,8 +265,8 @@ document.addEventListener('keydown', (e) => {
 
 // ===== HOUSE GALLERY LOGIC =====
 const houseImages = {
-  girls: Array.from({ length: 26 }, (_, i) => `house%201/MaMHouse-${i + 1}.jpg`),
-  boys: Array.from({ length: 24 }, (_, i) => `house%202/ScMHouse-${i + 1}.jpg`)
+  girls: Array.from({ length: 26 }, (_, i) => `house 1/MaMHouse-${i + 1}.jpg`),
+  boys: Array.from({ length: 24 }, (_, i) => `house 2/ScMHouse-${i + 1}.jpg`)
 };
 
 const houseIndexes = {
