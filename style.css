@@ -1653,6 +1653,151 @@ body::before {
   border: 1px solid rgba(59,130,246,0.4);
   box-shadow: 0 4px 16px rgba(59,130,246,0.2);
 }
+/* =====================
+   ACCOMMODATION SECTION
+   ===================== */
+.houses-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-xl);
+  margin-bottom: var(--sp-xl);
+}
+.house-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: transform var(--t-med), box-shadow var(--t-med);
+}
+.house-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-glass), var(--shadow-glow-gold);
+}
+.house-gallery {
+  position: relative;
+  width: 100%;
+}
+.gallery-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #000;
+}
+.gallery-active-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(10,13,20,0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--c-border);
+  color: var(--c-text);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background var(--t-fast), transform var(--t-fast);
+}
+.gallery-nav:hover {
+  background: var(--c-gold);
+  color: #0a0d14;
+  transform: translateY(-50%) scale(1.1);
+}
+.gallery-nav.prev {
+  left: var(--sp-sm);
+}
+.gallery-nav.next {
+  right: var(--sp-sm);
+}
+.gallery-counter {
+  position: absolute;
+  bottom: var(--sp-sm);
+  right: var(--sp-sm);
+  background: rgba(10,13,20,0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--c-border);
+  color: var(--c-text-muted);
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  font-size: 0.72rem;
+  font-weight: 600;
+  z-index: 10;
+}
+.house-info {
+  padding: var(--sp-md) var(--sp-lg) var(--sp-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xs);
+  flex-grow: 1;
+}
+.house-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  width: fit-content;
+  margin-bottom: 4px;
+}
+.badge-girls {
+  background: rgba(236,72,153,0.18);
+  color: #f9a8d4;
+  border: 1px solid rgba(236,72,153,0.3);
+}
+.badge-boys {
+  background: rgba(59,130,246,0.18);
+  color: #93c5fd;
+  border: 1px solid rgba(59,130,246,0.3);
+}
+.house-title {
+  font-family: var(--f-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--c-gold-light);
+}
+.house-location {
+  font-size: 0.8rem;
+  color: var(--c-text-muted);
+  margin-bottom: var(--sp-xs);
+}
+.house-divider {
+  height: 1px;
+  background: var(--c-border);
+  margin-bottom: var(--sp-sm);
+}
+.house-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.house-features li {
+  font-size: 0.85rem;
+  color: var(--c-text-muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .houses-container {
+    grid-template-columns: 1fr;
+    gap: var(--sp-lg);
+  }
+}
+
 
 /* push main content up so bar doesn't overlap footer */
 body { padding-bottom: 85px; }

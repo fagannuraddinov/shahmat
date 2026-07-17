@@ -262,3 +262,35 @@ document.addEventListener('keydown', (e) => {
     e.preventDefault();
   }
 });
+
+// ===== HOUSE GALLERY LOGIC =====
+const houseImages = {
+  girls: Array.from({ length: 26 }, (_, i) => `house%201/MaMHouse-${i + 1}.jpg`),
+  boys: Array.from({ length: 24 }, (_, i) => `house%202/ScMHouse-${i + 1}.jpg`)
+};
+
+const houseIndexes = {
+  girls: 0,
+  boys: 0
+};
+
+window.updateHouseImage = function(type) {
+  const imgEl = document.getElementById(`house-${type}-img`);
+  const counterEl = document.getElementById(`${type}-current`);
+  if (imgEl && counterEl) {
+    const idx = houseIndexes[type];
+    imgEl.src = houseImages[type][idx];
+    counterEl.textContent = idx + 1;
+  }
+};
+
+window.nextHouseImage = function(type) {
+  houseIndexes[type] = (houseIndexes[type] + 1) % houseImages[type].length;
+  window.updateHouseImage(type);
+};
+
+window.prevHouseImage = function(type) {
+  houseIndexes[type] = (houseIndexes[type] - 1 + houseImages[type].length) % houseImages[type].length;
+  window.updateHouseImage(type);
+};
+

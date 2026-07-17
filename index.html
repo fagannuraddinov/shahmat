@@ -69,6 +69,9 @@
     <button class="nav-tab" data-target="meals-section" id="nav-meals" onclick="switchTab('meals-section', this)">
       <span>🍽</span> Menyu
     </button>
+    <button class="nav-tab" data-target="accommodation-section" id="nav-accommodation" onclick="switchTab('accommodation-section', this)">
+      <span>🏠</span> Gecələmə
+    </button>
     <button class="nav-tab" data-target="training-section" id="nav-training" onclick="switchTab('training-section', this)">
       <span>🏋</span> Məşq
     </button>
@@ -1607,7 +1610,67 @@
           </div>
         </div>
       </div>
+    <!-- ========== TAB: GECƏLƏMƏ ========== -->
+    <section class="tab-section" id="accommodation-section" aria-label="Gecələmə">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="section-icon">🏠</span>
+          Qonaqlama Evləri
+        </h2>
+        <p class="section-desc">İştirakçıların rahatlığı üçün təşkil olunmuş gecələmə evləri</p>
+      </div>
 
+      <div class="houses-container">
+        
+        <!-- House 1: Girls -->
+        <div class="house-card glass-card animate-card" id="house-girls">
+          <div class="house-gallery">
+            <div class="gallery-viewport">
+              <img src="house%201/MaMHouse-1.jpg" alt="Qızlar üçün Qonaqlama Evi" class="gallery-active-img" id="house-girls-img" />
+              <button class="gallery-nav prev" onclick="prevHouseImage('girls')" aria-label="Əvvəlki şəkil">❮</button>
+              <button class="gallery-nav next" onclick="nextHouseImage('girls')" aria-label="Növbəti şəkil">❯</button>
+            </div>
+            <div class="gallery-counter"><span id="girls-current">1</span> / 26</div>
+          </div>
+          <div class="house-info">
+            <span class="house-badge badge-girls">♀ Qızlar üçün</span>
+            <h3 class="house-title">Qonaqlama Evi — I</h3>
+            <p class="house-location">📍 Zaqatala</p>
+            <div class="house-divider"></div>
+            <ul class="house-features">
+              <li>🏡 Rahat yataq otaqları və qonaq otağı</li>
+              <li>🛡️ Daimi müəllim nəzarəti və təhlükəsizlik</li>
+              <li>🧼 Təmiz və gigiyenik şərait</li>
+              <li>🌳 Geniş həyətyanı sahə</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- House 2: Boys -->
+        <div class="house-card glass-card animate-card" id="house-boys">
+          <div class="house-gallery">
+            <div class="gallery-viewport">
+              <img src="house%202/ScMHouse-1.jpg" alt="Oğlanlar üçün Qonaqlama Evi" class="gallery-active-img" id="house-boys-img" />
+              <button class="gallery-nav prev" onclick="prevHouseImage('boys')" aria-label="Əvvəlki şəkil">❮</button>
+              <button class="gallery-nav next" onclick="nextHouseImage('boys')" aria-label="Növbəti şəkil">❯</button>
+            </div>
+            <div class="gallery-counter"><span id="boys-current">1</span> / 24</div>
+          </div>
+          <div class="house-info">
+            <span class="house-badge badge-boys">♂ Oğlanlar üçün</span>
+            <h3 class="house-title">Qonaqlama Evi — II</h3>
+            <p class="house-location">📍 Zaqatala</p>
+            <div class="house-divider"></div>
+            <ul class="house-features">
+              <li>🛌 Geniş və rahat çarpayılar</li>
+              <li>♟️ Şahmat məşqləri üçün masalar</li>
+              <li>🚿 Daimi isti/soyuq su və lazımi avadanlıqlar</li>
+              <li>👨‍🏫 Müəllim heyətinin daimi dəstəyi</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
     </section>
 
   </main>
