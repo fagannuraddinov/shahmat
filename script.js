@@ -1,0 +1,264 @@
+/* =============================================
+   ZAQATALA SHAHMAT YARISHI 2026
+   JavaScript — Tab switching, Parallax, Animations
+   ============================================= */
+
+'use strict';
+
+// ===== PARALLAX EFFECT =====
+const parallaxBg = document.getElementById('parallaxBg');
+
+// Disable parallax on touch/mobile devices to prevent jitter
+const isMobile = () => window.innerWidth <= 768 || ('ontouchstart' in window);
+
+let rafPending = false;
+function handleParallax() {
+  if (isMobile()) {
+    // On mobile: lock the background, no transform
+    if (parallaxBg) parallaxBg.style.transform = 'translateY(0)';
+    return;
+  }
+  if (rafPending) return;
+  rafPending = true;
+  requestAnimationFrame(() => {
+    if (parallaxBg) {
+      parallaxBg.style.transform = `translateY(${window.scrollY * 0.4}px)`;
+    }
+    rafPending = false;
+  });
+}
+
+window.addEventListener('scroll', handleParallax, { passive: true });
+window.addEventListener('resize', handleParallax, { passive: true });
+
+// ===== STICKY NAV SCROLL BEHAVIOR =====
+const mainNav = document.getElementById('mainNav');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const current = window.scrollY;
+  if (current > lastScroll && current > 300) {
+    mainNav.style.transform = 'translateY(-100%)';
+    mainNav.style.transition = 'transform 0.3s ease';
+  } else {
+    mainNav.style.transform = 'translateY(0)';
+  }
+  lastScroll = current;
+}, { passive: true });
+
+// ===== MAIN TAB SWITCHER =====
+function switchTab(targetId, clickedBtn) {
+  // Hide all sections
+  document.querySelectorAll('.tab-section').forEach(sec => {
+    sec.classList.remove('active');
+  });
+  // Deactivate all nav tabs
+  document.querySelectorAll('.nav-tab').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  // Activate target section
+  const target = document.getElementById(targetId);
+  if (target) {
+    target.classList.add('active');
+    // Scroll to nav top
+    document.getElementById('mainNav').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Activate clicked button
+  if (clickedBtn) {
+    clickedBtn.classList.add('active');
+  }
+
+  // Trigger training bar animations if training tab
+  if (targetId === 'training-section') {
+    animateTrainingBars();
+  }
+}
+
+// ===== DAY SWITCHER (MEALS) =====
+function switchDay(dayId, clickedBtn) {
+  // Hide all day-meals
+  document.querySelectorAll('.day-meals').forEach(panel => {
+    panel.classList.remove('active');
+  });
+  // Deactivate all day buttons
+  document.querySelectorAll('.day-btn').forEach(btn => {
+    btn.classList.remove('active');
+    btn.setAttribute('aria-selected', 'false');
+  });
+
+  // Show selected day
+  const panel = document.getElementById('meals-' + dayId);
+  if (panel) {
+    panel.classList.add('active');
+  }
+
+  // Activate clicked button
+  if (clickedBtn) {
+    clickedBtn.classList.add('active');
+    clickedBtn.setAttribute('aria-selected', 'true');
+    // Scroll day button into view
+    clickedBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
+}
+
+// ===== TRAINING BARS ANIMATION =====
+function animateTrainingBars() {
+  const bars = document.querySelectorAll('.train-bar');
+  bars.forEach((bar, i) => {
+    bar.style.animation = 'none';
+    bar.offsetHeight; // trigger reflow
+    bar.style.animation = `barGrow 0.8s ease ${i * 0.1}s forwards`;
+  });
+}
+
+// ===== INTERSECTION OBSERVER for card reveal =====
+const observerOptions = {
+  threshold: 0.08,
+  rootMargin: '0px 0px -40px 0px'
+};
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+function setupCardReveal() {
+  document.querySelectorAll('.glass-card, .special-event-card, .closing-banner, .training-summary').forEach((card, i) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(24px)';
+    card.style.transition = `opacity 0.5s ease ${i * 0.04}s, transform 0.5s ease ${i * 0.04}s`;
+    revealObserver.observe(card);
+  });
+}
+
+// ===== ACTIVE DAY AUTO-HIGHLIGHT =====
+function highlightCurrentDay() {
+  const today = new Date();
+  const month = today.getMonth() + 1; // 1-indexed
+  const day = today.getDate();
+
+  // Only highlight if we're in August 2026
+  if (month !== 8) return;
+
+  if (day >= 2 && day <= 11) {
+    const padded = day.toString().padStart(2, '0');
+    const btn = document.getElementById(`day-btn-${padded}`);
+    const schedCard = document.getElementById(`sched-aug${padded}`);
+
+    if (btn) {
+      // Auto-switch to current day
+      switchDay(`d${padded}`, btn);
+    }
+
+    if (schedCard) {
+      schedCard.style.borderColor = 'rgba(212,168,67,0.45)';
+      schedCard.style.boxShadow = '0 0 24px rgba(212,168,67,0.15), 0 8px 32px rgba(0,0,0,0.45)';
+    }
+  }
+}
+
+// ===== GOLD SHIMMER ANIMATION on piece icons =====
+function addPieceInteraction() {
+  document.querySelectorAll('.piece').forEach(piece => {
+    piece.addEventListener('click', () => {
+      piece.style.opacity = '0.5';
+      piece.style.transform = 'scale(1.5)';
+      piece.style.transition = 'all 0.3s ease';
+      setTimeout(() => {
+        piece.style.opacity = '';
+        piece.style.transform = '';
+      }, 600);
+    });
+  });
+}
+
+// ===== TOUCH SWIPE for Day Selector =====
+let touchStartX = 0;
+let touchEndX = 0;
+
+function setupSwipeGestures() {
+  const mealsSection = document.getElementById('meals-section');
+  if (!mealsSection) return;
+
+  mealsSection.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  mealsSection.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+}
+
+function handleSwipe() {
+  const diff = touchStartX - touchEndX;
+  if (Math.abs(diff) < 60) return; // Min swipe distance
+
+  const activeDayBtn = document.querySelector('.day-btn.active');
+  if (!activeDayBtn) return;
+
+  const allBtns = Array.from(document.querySelectorAll('.day-btn'));
+  const currentIndex = allBtns.indexOf(activeDayBtn);
+
+  if (diff > 0 && currentIndex < allBtns.length - 1) {
+    // Swipe left → next day
+    const nextBtn = allBtns[currentIndex + 1];
+    const nextDayId = nextBtn.getAttribute('data-day');
+    switchDay(nextDayId, nextBtn);
+  } else if (diff < 0 && currentIndex > 0) {
+    // Swipe right → prev day
+    const prevBtn = allBtns[currentIndex - 1];
+    const prevDayId = prevBtn.getAttribute('data-day');
+    switchDay(prevDayId, prevBtn);
+  }
+}
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', () => {
+  setupCardReveal();
+  highlightCurrentDay();
+  addPieceInteraction();
+  setupSwipeGestures();
+
+  // Initial parallax call
+  handleParallax();
+
+  // Animate training bars initially if training tab starts visible
+  const trainingSection = document.getElementById('training-section');
+  if (trainingSection && trainingSection.classList.contains('active')) {
+    animateTrainingBars();
+  }
+
+  // Re-run card reveal when tabs switch
+  document.querySelectorAll('.nav-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      setTimeout(setupCardReveal, 50);
+    });
+  });
+});
+
+// ===== KEYBOARD NAVIGATION for day buttons =====
+document.addEventListener('keydown', (e) => {
+  const focused = document.activeElement;
+  if (!focused || !focused.classList.contains('day-btn')) return;
+
+  const allBtns = Array.from(document.querySelectorAll('.day-btn'));
+  const idx = allBtns.indexOf(focused);
+
+  if (e.key === 'ArrowRight' && idx < allBtns.length - 1) {
+    allBtns[idx + 1].focus();
+    allBtns[idx + 1].click();
+    e.preventDefault();
+  } else if (e.key === 'ArrowLeft' && idx > 0) {
+    allBtns[idx - 1].focus();
+    allBtns[idx - 1].click();
+    e.preventDefault();
+  }
+});
