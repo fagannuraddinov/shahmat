@@ -1799,6 +1799,40 @@ body::before {
 }
 
 
+/* =====================
+   HERO FAMILY NOTE
+   ===================== */
+.hero-family-note {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  padding: var(--sp-sm) var(--sp-md);
+  text-align: left;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  border: 1px solid rgba(59,130,246,0.3);
+  background: rgba(59,130,246,0.08);
+  width: 100%;
+  max-width: 380px;
+  border-radius: var(--r-md);
+  margin-top: var(--sp-xs);
+  box-shadow: 0 4px 20px rgba(59,130,246,0.15);
+  animation: floatPiece 6s ease-in-out infinite alternate;
+}
+.family-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+.hero-family-note strong {
+  color: #93c5fd;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.hero-family-note span {
+  color: var(--c-text-muted);
+}
+
 /* push main content up so bar doesn't overlap footer */
 body { padding-bottom: 85px; }
 
