@@ -124,13 +124,22 @@ const revealObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       entry.target.style.opacity = '1';
       entry.target.style.transform = 'translateY(0)';
+      entry.target.dataset.revealed = 'true';
       revealObserver.unobserve(entry.target);
     }
   });
 }, observerOptions);
 
 function setupCardReveal() {
-  document.querySelectorAll('.glass-card, .special-event-card, .closing-banner, .training-summary').forEach((card, i) => {
+  const activeSection = document.querySelector('.tab-section.active');
+  if (!activeSection) return;
+
+  activeSection.querySelectorAll('.glass-card, .special-event-card, .closing-banner, .training-summary').forEach((card, i) => {
+    if (card.dataset.revealed === 'true') {
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+      return;
+    }
     card.style.opacity = '0';
     card.style.transform = 'translateY(24px)';
     card.style.transition = `opacity 0.5s ease ${i * 0.04}s, transform 0.5s ease ${i * 0.04}s`;
