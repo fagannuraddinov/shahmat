@@ -392,7 +392,6 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', () => {
   const familyBanner = document.getElementById('hero-family-banner');
   const familyModal = document.getElementById('familyModal');
-  const closeBtnTop = document.getElementById('modalCloseBtnTop');
   const closeBtnBottom = document.getElementById('modalCloseBtnBottom');
 
   if (!familyBanner || !familyModal) return;
@@ -402,8 +401,8 @@ document.addEventListener('DOMContentLoaded', () => {
     familyModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
     
-    // Focus the top close button or container for accessibility
-    if (closeBtnTop) closeBtnTop.focus();
+    // Focus the close button for accessibility
+    if (closeBtnBottom) closeBtnBottom.focus();
   }
 
   function closeModal() {
@@ -423,7 +422,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Close events
-  if (closeBtnTop) closeBtnTop.addEventListener('click', closeModal);
   if (closeBtnBottom) closeBtnBottom.addEventListener('click', closeModal);
 
   // Close when clicking outside the modal content
