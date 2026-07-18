@@ -101,6 +101,11 @@ function switchDay(dayId, clickedBtn) {
     // Scroll day button into view
     clickedBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   }
+
+  // Start food image slideshow for selected day
+  if (typeof startDaySlideshows === 'function') {
+    startDaySlideshows(dayId);
+  }
 }
 
 // ===== TRAINING BARS ANIMATION =====
@@ -303,3 +308,82 @@ window.prevHouseImage = function(type) {
   window.updateHouseImage(type);
 };
 
+
+// ===== FOOD IMAGE SLIDESHOW =====
+const dayFoodImages = {
+  d02: ['2 avqust/2 avqust +.png','2 avqust/2 avqust + (2).png'],
+  d03: ['3 avqust/3 avqust +.png','3 avqust/3 avqust + (2).png','3 avqust/3 avqust + (3).png','3 avqust/3 avqust + (4).png'],
+  d04: ['4 avqust/4 avqust.png','4 avqust/4 avqust +.png','4 avqust/4 avqust (2).png'],
+  d05: ['5 avqust/5 avqust.png','5 avqust/5 avqust (2).png','5 avqust/5 avqust (3).png','5 avqust/5avqust.png'],
+  d06: ['6 avqust/6 avqust.png','6 avqust/6 avqust (2).png','6 avqust/6 avqust (3).png'],
+  d07: ['7 avqust/7 avqust.png','7 avqust/7 avqust (2).png','7 avqust/7 avqust (3).png','7 avqust/7 avqust (4).png'],
+  d08: ['8 avqust/8 avqust.png','8 avqust/8 avqust (2).png','8 avqust/8 avqust (3).png'],
+  d09: ['9 avqust/9 avqust.png','9 avqust/9 avqust (2).png','9 avqust/9 avqust (3).png','9 avqust/9 avqust (4).png'],
+  d10: ['10 avqust/10 avqust.png','10 avqust/10 avqust (2).png','10 avqust/10 avqust (3).png','10 avqust/10 avqust (4).png'],
+  d11: ['11 avqust/11 avqust.png','11 avqust/11 avqust (2).png','11 avqust/11 avqust (3).png']
+};
+
+let activeSlideshowIntervals = [];
+
+function initCardSlideshow(card, images) {
+  if (!card.querySelector('.meal-bg-slide')) {
+    var slideA = document.createElement('div');
+    slideA.className = 'meal-bg-slide';
+    var slideB = document.createElement('div');
+    slideB.className = 'meal-bg-slide';
+    card.insertBefore(slideB, card.firstChild);
+    card.insertBefore(slideA, card.firstChild);
+    var overlay = document.createElement('div');
+    overlay.className = 'meal-bg-overlay';
+    card.insertBefore(overlay, slideB.nextSibling);
+  }
+  var slides = card.querySelectorAll('.meal-bg-slide');
+  var slideA = slides[0];
+  var slideB = slides[1];
+  var idx = 0;
+  var useA = true;
+
+  function showNext() {
+    var img = images[idx % images.length];
+    var encodedImg = img.split('/').map(function(p){ return encodeURIComponent(p); }).join('/');
+    var url = 'url("' + encodedImg + '")';
+    if (useA) {
+      slideA.style.backgroundImage = url;
+      slideA.classList.add('visible');
+      slideB.classList.remove('visible');
+    } else {
+      slideB.style.backgroundImage = url;
+      slideB.classList.add('visible');
+      slideA.classList.remove('visible');
+    }
+    useA = !useA;
+    idx++;
+  }
+  showNext();
+  var intervalId = setInterval(showNext, 2300);
+  activeSlideshowIntervals.push(intervalId);
+}
+
+function startDaySlideshows(dayId) {
+  activeSlideshowIntervals.forEach(function(id){ clearInterval(id); });
+  activeSlideshowIntervals = [];
+  var images = dayFoodImages[dayId];
+  if (!images || images.length === 0) return;
+  var panel = document.getElementById('meals-' + dayId);
+  if (!panel) return;
+  var cards = panel.querySelectorAll('.meal-card');
+  cards.forEach(function(card, i) {
+    var offset = (i * Math.floor(images.length / Math.max(cards.length, 1))) % images.length;
+    var rotatedImages = images.slice(offset).concat(images.slice(0, offset));
+    initCardSlideshow(card, rotatedImages);
+  });
+}
+
+// Start slideshow for initially active day on load
+document.addEventListener('DOMContentLoaded', function() {
+  var activeBtn = document.querySelector('.day-btn.active');
+  if (activeBtn) {
+    var dayId = activeBtn.getAttribute('data-day');
+    if (dayId) startDaySlideshows(dayId);
+  }
+});

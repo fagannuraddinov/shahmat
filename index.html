@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="az">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Zaqatala şahmat yarışı - 02-11 Avqust 2026. Yarış cədvəli, qidalanma menyu və məşq saatları." />
+  <meta name="description"
+    content="Zaqatala şahmat yarışı - 02-11 Avqust 2026. Yarış cədvəli, qidalanma menyu və məşq saatları." />
   <title>♟ Zaqatala Şahmat Yarışı 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <!-- ===== PARALLAX HERO ===== -->
@@ -34,7 +39,7 @@
       </div>
       <h1 class="hero-title">
         <span class="title-chess">♟</span>
-        Şahmat<br/>Yarışı
+        Şahmat<br />Yarışı
         <span class="title-year">2026</span>
       </h1>
       <p class="hero-subtitle">02 – 11 Avqust · Zaqatala</p>
@@ -45,7 +50,7 @@
         </div>
         <div class="meta-item">
           <span class="meta-icon">♟</span>
-          <span>XI Tur</span>
+          <span>11 Tur</span>
         </div>
         <div class="meta-item">
           <span class="meta-icon">📍</span>
@@ -59,12 +64,20 @@
           <span>İştirakçıların ailə üzvləri də bizimlə gələ bilər!</span>
         </div>
       </div>
+      <div class="hero-picnic-note glass-card-sm" id="hero-picnic-banner">
+        <span class="family-icon">🏕️</span>
+        <div>
+          <strong>09 Avqust · 18:00 – Piknik:</strong>
+          <span>Çobankol kəndində yerləşən, meşə və dağlarla əhatə olunan Ümid Gölünün kənarında</span>
+        </div>
+      </div>
       <a href="Olimp%20%C5%9Fahmat%20turniri.pdf" target="_blank" class="hero-pdf-btn" id="hero-pdf-link">
         <span class="pdf-icon">📋</span>
         <span>Yarışın Ətraflı Reqlamenti (PDF)</span>
       </a>
     </div>
-    <button class="scroll-down" onclick="document.getElementById('nav-menu').scrollIntoView({behavior:'smooth'})" aria-label="Aşağı diyir">
+    <button class="scroll-down" onclick="document.getElementById('nav-menu').scrollIntoView({behavior:'smooth'})"
+      aria-label="Aşağı diyir">
       <span class="scroll-arrow">↓</span>
     </button>
   </section>
@@ -74,19 +87,23 @@
     <div class="nav-logo-wrap">
       <img src="logo%20new.png" alt="Logo" class="nav-logo" />
     </div>
-    <button class="nav-tab active" data-target="schedule-section" id="nav-schedule" onclick="switchTab('schedule-section', this)">
+    <button class="nav-tab active" data-target="schedule-section" id="nav-schedule"
+      onclick="switchTab('schedule-section', this)">
       <span>♟</span> Cədvəl
     </button>
     <button class="nav-tab" data-target="meals-section" id="nav-meals" onclick="switchTab('meals-section', this)">
       <span>🍽</span> Menyu
     </button>
-    <button class="nav-tab" data-target="accommodation-section" id="nav-accommodation" onclick="switchTab('accommodation-section', this)">
+    <button class="nav-tab" data-target="accommodation-section" id="nav-accommodation"
+      onclick="switchTab('accommodation-section', this)">
       <span>🏠</span> Gecələmə
     </button>
-    <button class="nav-tab" data-target="training-section" id="nav-training" onclick="switchTab('training-section', this)">
+    <button class="nav-tab" data-target="training-section" id="nav-training"
+      onclick="switchTab('training-section', this)">
       <span>🏋</span> Məşq
     </button>
-    <button class="nav-tab" data-target="teachers-section" id="nav-teachers" onclick="switchTab('teachers-section', this)">
+    <button class="nav-tab" data-target="teachers-section" id="nav-teachers"
+      onclick="switchTab('teachers-section', this)">
       <span>👨‍🏫</span> Müəllimlər
     </button>
     <button class="nav-tab" data-target="uniform-section" id="nav-uniform" onclick="switchTab('uniform-section', this)">
@@ -95,7 +112,8 @@
     <button class="nav-tab" data-target="doctor-section" id="nav-doctor" onclick="switchTab('doctor-section', this)">
       <span>🩺</span> Həkim
     </button>
-    <button class="nav-tab" data-target="transport-section" id="nav-transport" onclick="switchTab('transport-section', this)">
+    <button class="nav-tab" data-target="transport-section" id="nav-transport"
+      onclick="switchTab('transport-section', this)">
       <span>🚌</span> Nəqliyyat
     </button>
   </nav>
@@ -335,28 +353,49 @@
       </div><!-- /schedule-list -->
     </section>
 
-    <!-- ========== TAB: QIDALANMA MENYU ========== -->
+    <!-- ========== TAB: QIDALANMA MENYUSU ========== -->
     <section class="tab-section" id="meals-section" aria-label="Qidalanma menyu">
       <div class="section-header">
         <h2 class="section-title">
           <span class="section-icon">🍽</span>
-          Qidalanma Menyu
+          Qidalanma Menyusu
         </h2>
         <p class="section-desc">Gündəlik 3 vaxt yemək · Tam menyu</p>
       </div>
 
       <!-- Day Selector -->
       <div class="day-selector" id="daySelector" role="tablist" aria-label="Tarix seçin">
-        <button class="day-btn active" data-day="d02" onclick="switchDay('d02', this)" role="tab" aria-selected="true" id="day-btn-02">02</button>
-        <button class="day-btn" data-day="d03" onclick="switchDay('d03', this)" role="tab" aria-selected="false" id="day-btn-03">03</button>
-        <button class="day-btn" data-day="d04" onclick="switchDay('d04', this)" role="tab" aria-selected="false" id="day-btn-04">04</button>
-        <button class="day-btn" data-day="d05" onclick="switchDay('d05', this)" role="tab" aria-selected="false" id="day-btn-05">05</button>
-        <button class="day-btn" data-day="d06" onclick="switchDay('d06', this)" role="tab" aria-selected="false" id="day-btn-06">06</button>
-        <button class="day-btn" data-day="d07" onclick="switchDay('d07', this)" role="tab" aria-selected="false" id="day-btn-07">07</button>
-        <button class="day-btn" data-day="d08" onclick="switchDay('d08', this)" role="tab" aria-selected="false" id="day-btn-08">08</button>
-        <button class="day-btn" data-day="d09" onclick="switchDay('d09', this)" role="tab" aria-selected="false" id="day-btn-09">09</button>
-        <button class="day-btn" data-day="d10" onclick="switchDay('d10', this)" role="tab" aria-selected="false" id="day-btn-10">10</button>
-        <button class="day-btn" data-day="d11" onclick="switchDay('d11', this)" role="tab" aria-selected="false" id="day-btn-11">11</button>
+        <button class="day-btn active" data-day="d02" onclick="switchDay('d02', this)" role="tab" aria-selected="true"
+          id="day-btn-02">02</button>
+        <button class="day-btn" data-day="d03" onclick="switchDay('d03', this)" role="tab" aria-selected="false"
+          id="day-btn-03">03</button>
+        <button class="day-btn" data-day="d04" onclick="switchDay('d04', this)" role="tab" aria-selected="false"
+          id="day-btn-04">04</button>
+        <button class="day-btn" data-day="d05" onclick="switchDay('d05', this)" role="tab" aria-selected="false"
+          id="day-btn-05">05</button>
+        <button class="day-btn" data-day="d06" onclick="switchDay('d06', this)" role="tab" aria-selected="false"
+          id="day-btn-06">06</button>
+        <button class="day-btn" data-day="d07" onclick="switchDay('d07', this)" role="tab" aria-selected="false"
+          id="day-btn-07">07</button>
+        <button class="day-btn" data-day="d08" onclick="switchDay('d08', this)" role="tab" aria-selected="false"
+          id="day-btn-08">08</button>
+        <button class="day-btn" data-day="d09" onclick="switchDay('d09', this)" role="tab" aria-selected="false"
+          id="day-btn-09">09</button>
+        <button class="day-btn" data-day="d10" onclick="switchDay('d10', this)" role="tab" aria-selected="false"
+          id="day-btn-10">10</button>
+        <button class="day-btn" data-day="d11" onclick="switchDay('d11', this)" role="tab" aria-selected="false"
+          id="day-btn-11">11</button>
+      </div>
+
+      <!-- Chef Card -->
+      <div class="chef-card glass-card">
+        <div class="chef-img-wrap">
+          <img src="şef.png" alt="Şef Xidməti" class="chef-img" loading="lazy" />
+        </div>
+        <div class="chef-info">
+          <span class="chef-badge">👨‍🍳 Xüsusi Şef</span>
+          <p class="chef-text">Turnir və səyahət boyunca iştirakçılar və qonaqlar üçün xüsusi ayrılmış şef xidmətinizdədir.</p>
+        </div>
       </div>
 
       <!-- ===== AUG 02 ===== -->
@@ -383,14 +422,14 @@
               <span class="meal-cat-icon">🥣</span>
               <div>
                 <span class="meal-cat">Sular / İçkilər</span>
-                <p>Kompot, Ayran, Fanta, Cola</p>
+                <p>Kompot, Ayran, Fanta, Coca-Cola</p>
               </div>
             </div>
             <div class="meal-row">
               <span class="meal-cat-icon">🍲</span>
               <div>
                 <span class="meal-cat">İsti yemək</span>
-                <p>Toyuq supu, Üç bacı dolması</p>
+                <p>Toyuq supu, Üç-bacı dolması</p>
               </div>
             </div>
           </div>
@@ -409,21 +448,21 @@
               <span class="meal-cat-icon">🥗</span>
               <div>
                 <span class="meal-cat">Salatlar</span>
-                <p>Pomidor-Xiyar, Pendir, Ajika, Süzmə</p>
+                <p>Pomidor-Xiyar, Pendir, Acika, Süzmə</p>
               </div>
             </div>
             <div class="meal-row">
               <span class="meal-cat-icon">🍲</span>
               <div>
                 <span class="meal-cat">İsti yemək</span>
-                <p>Qızardılmış kartof, Kənt Toyuqu ilə</p>
+                <p>Qızardılmış kartof, Kənd Toyuğu ilə</p>
               </div>
             </div>
             <div class="meal-row">
               <span class="meal-cat-icon">🥤</span>
               <div>
                 <span class="meal-cat">İçkilər</span>
-                <p>Kompot, Qazlı-qazsız Qax suyu, Samavar çayı</p>
+                <p>Kompot, Qax suyu (qazlı-qazsız), Samovar çayı</p>
               </div>
             </div>
           </div>
@@ -447,7 +486,8 @@
               <span class="meal-cat-icon">🍳</span>
               <div>
                 <span class="meal-cat">Məhsullar</span>
-                <p>Nəhrə yağı, Bal, Pendir, Zeytun, Süd, Pomidor-Xiyar, Soyutma yumurta (ev), Pomidor yumurta, Samavar çayı</p>
+                <p>Nehrə yağı, Bal, Pendir, Zeytun, Süd, Pomidor-Xiyar, Soyutma yumurta (kənd), Pomidor yumurta, Samovar
+                  çayı</p>
               </div>
             </div>
           </div>
@@ -473,14 +513,14 @@
               <span class="meal-cat-icon">🥤</span>
               <div>
                 <span class="meal-cat">Sular</span>
-                <p>Kompot, Qax suyu, Düşes</p>
+                <p>Kompot, Qax suyu (qazlı-qazsız), Düşes</p>
               </div>
             </div>
             <div class="meal-row">
               <span class="meal-cat-icon">🍲</span>
               <div>
                 <span class="meal-cat">İsti yemək</span>
-                <p>Qarabaşaq, Katlet, Dovğa</p>
+                <p>Qarabaşaq, Kotlet, Dovğa</p>
               </div>
             </div>
           </div>
@@ -513,7 +553,7 @@
               <span class="meal-cat-icon">🥤</span>
               <div>
                 <span class="meal-cat">Sular</span>
-                <p>Qax suyu qazlı-qazsız, Fanta, Cola</p>
+                <p>Qax suyu (qazlı-qazsız), Fanta, Coca-Cola</p>
               </div>
             </div>
           </div>
@@ -545,7 +585,8 @@
               <span class="meal-cat-icon">🍳</span>
               <div>
                 <span class="meal-cat">Məhsullar</span>
-                <p>Samavar çayı, Nəhrə yağı, Bal, Pendir, Şor, Süzmə, Manqalüstü sosiska, Yumurta (qlazok), Zeytun, Pomidor-Xiyar</p>
+                <p>Samovar çayı, Nehrə yağı, Bal, Pendir, Şor, Süzmə, Manqal üstü sosiska, Yumurta (qlazok), Zeytun,
+                  Pomidor-Xiyar</p>
               </div>
             </div>
           </div>
@@ -564,14 +605,14 @@
               <span class="meal-cat-icon">🥗</span>
               <div>
                 <span class="meal-cat">Salatlar</span>
-                <p>Pendir, Süzmə, Manqal salatı, Ajika, Pomidor-Xiyar, Göyərti</p>
+                <p>Pendir, Süzmə, Manqal salatı, Acika, Pomidor-Xiyar, Göyərti</p>
               </div>
             </div>
             <div class="meal-row">
               <span class="meal-cat-icon">🥤</span>
               <div>
                 <span class="meal-cat">Sular</span>
-                <p>Qax suyu qazlı-qazsız, Tərxum, Pepsi, Kompot</p>
+                <p>Qax suyu (qazlı-qazsız), Tərxun, Pepsi, Kompot</p>
               </div>
             </div>
             <div class="meal-row">
@@ -597,14 +638,14 @@
               <span class="meal-cat-icon">🥗</span>
               <div>
                 <span class="meal-cat">Salatlar</span>
-                <p>Pendir, Pomidor xiyar, Pərpətöyn, Göyərti, Şor, Qatıq</p>
+                <p>Pendir, Pomidor-Xiyar, Pərpətöyün, Göyərti, Şor, Qatıq</p>
               </div>
             </div>
             <div class="meal-row">
               <span class="meal-cat-icon">🥤</span>
               <div>
                 <span class="meal-cat">Sular</span>
-                <p>Kompot, Qax suyu</p>
+                <p>Kompot, Qax suyu (qazlı-qazsız)</p>
               </div>
             </div>
             <div class="meal-row">
@@ -621,7 +662,7 @@
           <span class="special-icon">☕</span>
           <div>
             <span class="special-time">20:30</span>
-            <span class="special-text">Çay saatı · Samavar · Şirniyyat ilə</span>
+            <span class="special-text">Çay saatı · Samovar · Şirniyyat ilə</span>
           </div>
         </div>
       </div>
@@ -643,7 +684,7 @@
               <span class="meal-cat-icon">🍳</span>
               <div>
                 <span class="meal-cat">Məhsullar</span>
-                <p>Nəhrə yağı, Bal, Qaymaq, Motal pendiri, Kükü (Göyərti yumurta), Samavar çayı</p>
+                <p>Nehrə yağı, Bal, Qaymaq, Motal pendiri, Kükü (Göyərti, yumurta), Samovar çayı</p>
               </div>
             </div>
           </div>
@@ -669,14 +710,14 @@
               <span class="meal-cat-icon">🥤</span>
               <div>
                 <span class="meal-cat">Sular</span>
-                <p>Qax suyu, Fanta, Cola, Kompot</p>
+                <p>Qax suyu (qazlı-qazsız), Fanta, Coca-Cola, Kompot</p>
               </div>
             </div>
             <div class="meal-row">
               <span class="meal-cat-icon">🍲</span>
               <div>
                 <span class="meal-cat">İsti yemək</span>
-                <p>Kartof qızartma, Mal əti, Pomidor, Badımcan, Bibər (qızartma) Saç</p>
+                <p>Kartof qızartması, Mal ətindən saç</p>
               </div>
             </div>
           </div>
@@ -696,10 +737,24 @@
               <span>Daşlıq Restoranında</span>
             </div>
             <div class="meal-row">
+              <span class="meal-cat-icon">🥗</span>
+              <div>
+                <span class="meal-cat">Salatlar</span>
+                <p>Manqal salatı, Pendir, Göyərti, Süzmə</p>
+              </div>
+            </div>
+            <div class="meal-row">
+              <span class="meal-cat-icon">🥤</span>
+              <div>
+                <span class="meal-cat">Sular</span>
+                <p>Qax suyu (qazlı-qazsız), Fanta, Coca-Cola, Kompot</p>
+              </div>
+            </div>
+            <div class="meal-row">
               <span class="meal-cat-icon">🍢</span>
               <div>
-                <span class="meal-cat">Xüsusi yemək</span>
-                <p>Asorti Kabab</p>
+                <span class="meal-cat">İsti yemək</span>
+                <p>Assorti kabab</p>
               </div>
             </div>
           </div>
@@ -723,7 +778,7 @@
               <span class="meal-cat-icon">🍳</span>
               <div>
                 <span class="meal-cat">Məhsullar</span>
-                <p>Samavar çayı, Nəhrə yağı, Bal, Bişmiş yumurta, Zeytun, Pendir, Kakao kremi, Süd</p>
+                <p>Samovar çayı, Nehrə yağı, Bal, Soyutma yumurta, Zeytun, Pendir, Şokolad yağı, Qatılaşdırılmış süd</p>
               </div>
             </div>
           </div>
@@ -742,21 +797,21 @@
               <span class="meal-cat-icon">🥗</span>
               <div>
                 <span class="meal-cat">Salatlar</span>
-                <p>Pomidor xiyar, Paytax salatı, Qoyun pendiri, Süzmə İvanovka, Göyərti</p>
+                <p>Pomidor-xiyar, Paytaxt salatı, Qoyun pendiri, Süzmə, Göyərti</p>
               </div>
             </div>
             <div class="meal-row">
               <span class="meal-cat-icon">🥤</span>
               <div>
                 <span class="meal-cat">İçkilər</span>
-                <p>Kompot, Doğramac, Təbi şirə, Qax suyu qazlı-qazsız</p>
+                <p>Kompot, Doğramac, Təbi meyvə sirəsi, Qax suyu (qazlı-qazsız)</p>
               </div>
             </div>
             <div class="meal-row">
               <span class="meal-cat-icon">🍲</span>
               <div>
                 <span class="meal-cat">İsti yemək</span>
-                <p>Makaron ət qulyajı, Toyuq qızardılmış</p>
+                <p>Makaron ət qulyajı, Qızardılmış toyuq</p>
               </div>
             </div>
           </div>
@@ -775,21 +830,21 @@
               <span class="meal-cat-icon">🥗</span>
               <div>
                 <span class="meal-cat">Salatlar</span>
-                <p>Çoban salatı, Paytax salatı, Pendir, Göyərti, Şor, Ajika</p>
+                <p>Çoban salatı, Paytaxt salatı, Pendir, Göyərti, Şor, Acika</p>
               </div>
             </div>
             <div class="meal-row">
               <span class="meal-cat-icon">🥤</span>
               <div>
                 <span class="meal-cat">İçkilər</span>
-                <p>Fanta, Cola, Tərxum, Kompot</p>
+                <p>Fanta, Coca-Cola, Tərxun, Kompot</p>
               </div>
             </div>
             <div class="meal-row">
               <span class="meal-cat-icon">🍗</span>
               <div>
                 <span class="meal-cat">İsti yemək</span>
-                <p>Soyutma Toyuq (kənt çolpası), Soyutma kartof, Göy qutabı</p>
+                <p>Soyutma Toyuq (kənd), Soyutma kartof, Göy qutabı</p>
               </div>
             </div>
           </div>
@@ -799,7 +854,7 @@
           <span class="special-icon">☕</span>
           <div>
             <span class="special-time">20:30</span>
-            <span class="special-text">Çay saatı · Samavar dəzgah</span>
+            <span class="special-text">Çay saatı · Samovar dəzgah</span>
           </div>
         </div>
       </div>
@@ -821,7 +876,7 @@
               <span class="meal-cat-icon">🍳</span>
               <div>
                 <span class="meal-cat">Məhsullar</span>
-                <p>Qaymaq, Nəhrə yağı, Xama, Bal, Yumurta qayğanaq, Pendir, Samavar çayı</p>
+                <p>Qaymaq, Nehrə yağı, Smetan, Bal, Yumurta qayğanaq, Pendir, Samovar çayı</p>
               </div>
             </div>
           </div>
@@ -880,7 +935,7 @@
               <span class="meal-cat-icon">🥤</span>
               <div>
                 <span class="meal-cat">İçkilər</span>
-                <p>Kompot, Fanta, Cola</p>
+                <p>Kompot, Fanta, Coca-Cola</p>
               </div>
             </div>
             <div class="meal-row">
@@ -919,7 +974,7 @@
               <span class="meal-cat-icon">🍳</span>
               <div>
                 <span class="meal-cat">Məhsullar</span>
-                <p>Nəhrə yağı, Pendir, Şor, Pomidor yumurta, Samavar çayı</p>
+                <p>Nehrə yağı, Pendir, Şor, Pomidor yumurta, Samovar çayı</p>
               </div>
             </div>
           </div>
@@ -938,21 +993,21 @@
               <span class="meal-cat-icon">🥗</span>
               <div>
                 <span class="meal-cat">Salatlar</span>
-                <p>Pomidor xiyar, Pendir, Göyərti, Süzmə, Ajika</p>
+                <p>Pomidor-xiyar, Pendir, Göyərti, Süzmə, Acika</p>
               </div>
             </div>
             <div class="meal-row">
               <span class="meal-cat-icon">🥤</span>
               <div>
                 <span class="meal-cat">İçkilər</span>
-                <p>Kompot, Düşes, Qax suyu, Dovğa</p>
+                <p>Kompot, Düşes, Qax suyu (qazlı-qazsız), Dovğa</p>
               </div>
             </div>
             <div class="meal-row">
               <span class="meal-cat-icon">🍲</span>
               <div>
                 <span class="meal-cat">İsti yemək</span>
-                <p>Kartof qızardılmış, Katlet, Sup Makaron</p>
+                <p>Kartof qızardılmış, Kotlet, Makaron supu</p>
               </div>
             </div>
           </div>
@@ -971,21 +1026,21 @@
               <span class="meal-cat-icon">🥗</span>
               <div>
                 <span class="meal-cat">Salatlar</span>
-                <p>Çoban salatı, Pendir, Göyərti, Süzmə, Ajika</p>
+                <p>Çoban salatı (pendirli), Göyərti, Süzmə, Acika</p>
               </div>
             </div>
             <div class="meal-row">
               <span class="meal-cat-icon">🍢</span>
               <div>
                 <span class="meal-cat">İsti yemək</span>
-                <p>Asorti Kabab</p>
+                <p>Assorti Kabab</p>
               </div>
             </div>
             <div class="meal-row">
               <span class="meal-cat-icon">🥤</span>
               <div>
                 <span class="meal-cat">İçkilər</span>
-                <p>Fanta, Cola, Tərxum, Qax suyu</p>
+                <p>Fanta, Coca-Cola, Tərxun, Qax suyu (qazlı-qazsız)</p>
               </div>
             </div>
           </div>
@@ -1017,7 +1072,7 @@
               <span class="meal-cat-icon">🍳</span>
               <div>
                 <span class="meal-cat">Məhsullar</span>
-                <p>Nəhrə yağı, Bal, Pendir, Kakao kremi, Bişmiş yumurta, Sosiska manqalüstü, Samavar çayı</p>
+                <p>Nehrə yağı, Bal, Pendir, Şokolad yağı, Soyutma yumurta, Sosiska manqal üstü, Samovar çayı</p>
               </div>
             </div>
           </div>
@@ -1043,7 +1098,7 @@
               <span class="meal-cat-icon">🥤</span>
               <div>
                 <span class="meal-cat">İçkilər</span>
-                <p>Qax suyu, Reyhan Kompotu, Tərxum Kompotu</p>
+                <p>Qax suyu (qazlı-qazsız), Reyhan kompotu, Tərxun kompotu</p>
               </div>
             </div>
             <div class="meal-row">
@@ -1053,6 +1108,22 @@
                 <p>Makaron qulyaj, Düşbərə</p>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="picnic-card glass-card" id="picnic-09">
+          <div class="picnic-img-wrap">
+            <img src="%C3%9Cmid%20g%C3%B6l%C3%BC.jpg" alt="Ümid Gölü" class="picnic-img" loading="lazy" />
+            <div class="picnic-img-overlay"></div>
+            <div class="picnic-time-badge">18:00</div>
+          </div>
+          <div class="picnic-body">
+            <div class="picnic-title-row">
+              <span class="picnic-emoji">🏕️</span>
+              <span class="picnic-title">Piknik</span>
+            </div>
+            <p class="picnic-desc">Çobankol kəndində yerləşən, meşə və dağlarla əhatə olunan <strong>Ümid
+                Gölünün</strong> kənarında</p>
           </div>
         </div>
 
@@ -1076,7 +1147,7 @@
               <span class="meal-cat-icon">🥤</span>
               <div>
                 <span class="meal-cat">İçkilər</span>
-                <p>Fanta, Cola, Qax suyu</p>
+                <p>Fanta, Coca-Cola, Qax suyu (qazlı-qazsız)</p>
               </div>
             </div>
             <div class="meal-row">
@@ -1093,7 +1164,7 @@
           <span class="special-icon">☕</span>
           <div>
             <span class="special-time">20:00</span>
-            <span class="special-text">Çay dəzgahı · Samavar</span>
+            <span class="special-text">Çay dəzgahı · Samovar</span>
           </div>
         </div>
       </div>
@@ -1115,7 +1186,7 @@
               <span class="meal-cat-icon">🍳</span>
               <div>
                 <span class="meal-cat">Məhsullar</span>
-                <p>Samavar çayı, Nəhrə yağı, Bal, Qaymaq, Pendir, Yumurta (qayğanaq)</p>
+                <p>Samovar çayı, Nehrə yağı, Bal, Smetan, Pendir, Yumurta (qlazok)</p>
               </div>
             </div>
           </div>
@@ -1141,7 +1212,7 @@
               <span class="meal-cat-icon">🥤</span>
               <div>
                 <span class="meal-cat">İçkilər</span>
-                <p>Qax suyu, Kompot, Fanta, Sprait</p>
+                <p>Qax suyu (qazlı-qazsız), Kompot, Fanta, Sprite</p>
               </div>
             </div>
             <div class="meal-row">
@@ -1167,14 +1238,21 @@
               <span class="meal-cat-icon">🥗</span>
               <div>
                 <span class="meal-cat">Salatlar</span>
-                <p>Çoban salatı, Pendir, Göyərti, Ajika, Süzmə, Sezar salatı</p>
+                <p>Çoban salatı, Pendir, Göyərti, Acika, Süzmə, Sezar salatı</p>
+              </div>
+            </div>
+            <div class="meal-row">
+              <span class="meal-cat-icon">🥤</span>
+              <div>
+                <span class="meal-cat">İçkilər</span>
+                <p>Qax suyu (qazlı-qazsız), Kompot, Fanta, Coca-Cola</p>
               </div>
             </div>
             <div class="meal-row">
               <span class="meal-cat-icon">🍗</span>
               <div>
                 <span class="meal-cat">İsti yemək</span>
-                <p>Sobada Toyuq, kartof, pomidor, bibər, badımcan</p>
+                <p>Soba yeməyi (toyuq, kartof, pomidor, bibər, badımcan)</p>
               </div>
             </div>
           </div>
@@ -1206,7 +1284,7 @@
               <span class="meal-cat-icon">🍳</span>
               <div>
                 <span class="meal-cat">Məhsullar</span>
-                <p>Samavar çayı, Nəhrə yağı, Bal, Pendir, Süd, Bişmiş yumurta</p>
+                <p>Samovar çayı, Nehrə yağı, Bal, Pendir, Qatılaşdırılmış süd, Soyutma yumurta</p>
               </div>
             </div>
           </div>
@@ -1232,7 +1310,7 @@
               <span class="meal-cat-icon">🥤</span>
               <div>
                 <span class="meal-cat">İçkilər</span>
-                <p>Fanta, Cola, Qax suyu, Ayran</p>
+                <p>Fanta, Coca-Cola, Qax suyu (qazlı-qazsız), Ayran</p>
               </div>
             </div>
             <div class="meal-row">
@@ -1393,7 +1471,7 @@
             <span class="summary-icon">📊</span>
             <div>
               <span class="summary-label">Ümumi məşq saatı</span>
-              <span class="summary-value">14 saat</span>
+              <span class="summary-value">13 saat</span>
             </div>
           </div>
           <div class="summary-row">
@@ -1430,7 +1508,8 @@
 
         <div class="teacher-card glass-card" id="teacher-elcin">
           <div class="teacher-photo-wrap">
-            <img src="muellim%20heyyeti/El%C3%A7in%20%C6%8Fliyev.jpeg" alt="Elçin Əliyev" class="teacher-photo" loading="lazy" />
+            <img src="muellim%20heyyeti/El%C3%A7in%20%C6%8Fliyev.jpeg" alt="Elçin Əliyev" class="teacher-photo"
+              loading="lazy" />
             <div class="teacher-photo-overlay"></div>
             <div class="teacher-organizer-badge">🏆 Təşkilatçı</div>
           </div>
@@ -1439,14 +1518,24 @@
             <h3 class="teacher-name">Elçin Əliyev</h3>
             <p class="teacher-role">Şahmat Müəllimi &amp; Təşkilatçı</p>
             <div class="teacher-divider"></div>
-            <p class="teacher-desc">Yarışa gedış və qidalanmanı təşkil edən şəxsdir. Yarışa qoşulumaq istəyənlər onunla əlaqə saxlamalıdır.</p>
+            <p class="teacher-desc">Yarışa gedış və qidalanmanı təşkil edən şəxsdir. Yarışa qoşulumaq istəyənlər onunla
+              əlaqə saxlamalıdır.</p>
             <div class="teacher-contact-btns">
-              <a href="https://wa.me/994103281817" target="_blank" class="tcard-btn tcard-btn-wa" id="teacher-wa-btn" aria-label="WhatsApp">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.555 4.119 1.527 5.847L.057 23.882l6.198-1.625A11.935 11.935 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.802 9.802 0 01-5.007-1.375l-.357-.214-3.706.97.991-3.613-.234-.372A9.817 9.817 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"/></svg>
+              <a href="https://wa.me/994103281817" target="_blank" class="tcard-btn tcard-btn-wa" id="teacher-wa-btn"
+                aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                  <path
+                    d="M12 0C5.373 0 0 5.373 0 12c0 2.126.555 4.119 1.527 5.847L.057 23.882l6.198-1.625A11.935 11.935 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.802 9.802 0 01-5.007-1.375l-.357-.214-3.706.97.991-3.613-.234-.372A9.817 9.817 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z" />
+                </svg>
                 WhatsApp
               </a>
               <a href="tel:+994103281817" class="tcard-btn tcard-btn-call" id="teacher-call-btn" aria-label="Zəng">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                  <path
+                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                </svg>
                 Zəng et
               </a>
             </div>
@@ -1455,7 +1544,8 @@
 
         <div class="teacher-card glass-card" id="teacher-aliye">
           <div class="teacher-photo-wrap">
-            <img src="muellim%20heyyeti/Aliy%C9%99%20Vir%C5%9Fanova.jpeg" alt="Aliyə Virşanova" class="teacher-photo" loading="lazy" />
+            <img src="muellim%20heyyeti/Aliy%C9%99%20Vir%C5%9Fanova.jpeg" alt="Aliyə Virşanova" class="teacher-photo"
+              loading="lazy" />
             <div class="teacher-photo-overlay"></div>
           </div>
           <div class="teacher-info">
@@ -1464,6 +1554,21 @@
             <p class="teacher-role">Şahmat Müəllimi</p>
             <div class="teacher-divider"></div>
             <p class="teacher-desc">Qız şagirdlər üçün xüsusi hazırlıq — yarış hər iki cins üçündür</p>
+          </div>
+        </div>
+
+        <div class="teacher-card glass-card" id="teacher-ceyhun">
+          <div class="teacher-photo-wrap">
+            <img src="muellim%20heyyeti/Ceyhun%20%C6%8Fliyev.jpeg" alt="Ceyhun Əliyev" class="teacher-photo"
+              loading="lazy" />
+            <div class="teacher-photo-overlay"></div>
+          </div>
+          <div class="teacher-info">
+            <div class="teacher-gender-badge badge-male">♂ Kişi</div>
+            <h3 class="teacher-name">Ceyhun Əliyev</h3>
+            <p class="teacher-role">Şahmat Müəllimi</p>
+            <div class="teacher-divider"></div>
+            <p class="teacher-desc">Yarış iştirakçılarının hazırlığına nəzarət edən müəllim heyətinin üzvü</p>
           </div>
         </div>
 
@@ -1480,35 +1585,13 @@
           <span class="section-icon">👕</span>
           Yarışçı Forması
         </h2>
-        <p class="section-desc">Rəsmi idman geyimləri · sport24.az</p>
+        <p class="section-desc">Rəsmi idman geyimləri</p>
       </div>
 
-      <div class="uniform-wrap" id="uniform-wrap">
-        <div class="uniform-img-card glass-card">
-          <img src="forma.png" alt="Rəsmi İdman Geyimləri" class="uniform-img" loading="lazy" />
-        </div>
-        <div class="uniform-info-grid">
-          <div class="uniform-info-card glass-card" id="uniform-info-white">
-            <span class="uniform-color-dot" style="background:#f5f5f5; border: 2px solid #aaa;"></span>
-            <div>
-              <span class="uniform-color-label">A &amp; B — Ağ</span>
-              <p>Ön tərəf loqo · Arxa böyük loqo</p>
-            </div>
-          </div>
-          <div class="uniform-info-card glass-card" id="uniform-info-green">
-            <span class="uniform-color-dot" style="background:#8bc34a;"></span>
-            <div>
-              <span class="uniform-color-label">C &amp; D — Yaşıl</span>
-              <p>Ön tərəf loqo · Arxa böyük loqo</p>
-            </div>
-          </div>
-          <div class="uniform-info-card glass-card" id="uniform-info-brand">
-            <span class="uniform-color-dot" style="background: linear-gradient(135deg,#d4a843,#c77b2f);"></span>
-            <div>
-              <span class="uniform-color-label">Brend</span>
-              <p>sport24.az loqosu</p>
-            </div>
-          </div>
+      <div class="uniform-single-wrap" id="uniform-wrap">
+        <div class="uniform-single-card glass-card" id="uniform-single-card">
+          <div class="uniform-single-label">İştirakçıların yarış forması</div>
+          <img src="forma.png" alt="İştirakçıların yarış forması" class="uniform-single-img" loading="lazy" />
         </div>
       </div>
 
@@ -1633,12 +1716,13 @@
       </div>
 
       <div class="houses-container">
-        
+
         <!-- House 1: Girls -->
         <div class="house-card glass-card animate-card" id="house-girls">
           <div class="house-gallery">
             <div class="gallery-viewport">
-              <img src="house 1/MaMHouse-1.jpg" alt="Qızlar üçün Qonaqlama Evi" class="gallery-active-img" id="house-girls-img" />
+              <img src="house 1/MaMHouse-1.jpg" alt="Qızlar üçün Qonaqlama Evi" class="gallery-active-img"
+                id="house-girls-img" />
               <button class="gallery-nav prev" onclick="prevHouseImage('girls')" aria-label="Əvvəlki şəkil">❮</button>
               <button class="gallery-nav next" onclick="nextHouseImage('girls')" aria-label="Növbəti şəkil">❯</button>
             </div>
@@ -1662,7 +1746,8 @@
         <div class="house-card glass-card animate-card" id="house-boys">
           <div class="house-gallery">
             <div class="gallery-viewport">
-              <img src="house 2/ScMHouse-1.jpg" alt="Oğlanlar üçün Qonaqlama Evi" class="gallery-active-img" id="house-boys-img" />
+              <img src="house 2/ScMHouse-1.jpg" alt="Oğlanlar üçün Qonaqlama Evi" class="gallery-active-img"
+                id="house-boys-img" />
               <button class="gallery-nav prev" onclick="prevHouseImage('boys')" aria-label="Əvvəlki şəkil">❮</button>
               <button class="gallery-nav next" onclick="nextHouseImage('boys')" aria-label="Növbəti şəkil">❯</button>
             </div>
@@ -1711,16 +1796,26 @@
         </div>
       </div>
       <div class="float-btns">
-        <a href="https://wa.me/994103281817" target="_blank" class="float-btn float-btn-wa" id="float-wa-btn" aria-label="WhatsApp ilə əlaqə">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.555 4.119 1.527 5.847L.057 23.882l6.198-1.625A11.935 11.935 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.802 9.802 0 01-5.007-1.375l-.357-.214-3.706.97.991-3.613-.234-.372A9.817 9.817 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"/></svg>
+        <a href="https://wa.me/994103281817" target="_blank" class="float-btn float-btn-wa" id="float-wa-btn"
+          aria-label="WhatsApp ilə əlaqə">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path
+              d="M12 0C5.373 0 0 5.373 0 12c0 2.126.555 4.119 1.527 5.847L.057 23.882l6.198-1.625A11.935 11.935 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.802 9.802 0 01-5.007-1.375l-.357-.214-3.706.97.991-3.613-.234-.372A9.817 9.817 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z" />
+          </svg>
           WhatsApp
         </a>
         <a href="tel:+994103281817" class="float-btn float-btn-call" id="float-call-btn" aria-label="Zəng et">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path
+              d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+          </svg>
           Zəng et
         </a>
       </div>
     </div>
   </div>
 </body>
+
 </html>

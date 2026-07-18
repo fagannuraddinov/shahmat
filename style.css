@@ -733,6 +733,63 @@ body::before {
   transform: scale(1.1);
 }
 
+/* Chef Card */
+.chef-card {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-md);
+  margin-bottom: var(--sp-lg);
+  padding: var(--sp-md);
+  border: 1px solid rgba(212, 168, 67, 0.2);
+}
+.chef-img-wrap {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--c-gold);
+}
+.chef-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.chef-info {
+  flex-grow: 1;
+}
+.chef-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, var(--c-gold), #c77b2f);
+  color: #1a1200;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: var(--sp-xs);
+}
+.chef-text {
+  font-size: 0.9rem;
+  color: var(--c-text);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+@media (max-width: 576px) {
+  .chef-card {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--sp-md);
+    gap: var(--sp-sm);
+  }
+  .chef-img-wrap {
+    width: 90px;
+    height: 90px;
+  }
+}
+
 /* Day Meals */
 .day-meals { display: none; }
 .day-meals.active { display: block; animation: fadeSlideUp 0.35s ease forwards; }
@@ -759,7 +816,56 @@ body::before {
 .meal-card {
   margin-bottom: var(--sp-sm);
   overflow: hidden;
+  position: relative;
 }
+
+/* Background slideshow layers */
+.meal-card .meal-bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  z-index: 0;
+  border-radius: inherit;
+}
+.meal-card .meal-bg-slide.visible {
+  opacity: 1;
+}
+
+/* Dark overlay to keep text readable on any background photo */
+.meal-card .meal-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 8, 20, 0.72) 0%,
+    rgba(10, 8, 20, 0.55) 40%,
+    rgba(10, 8, 20, 0.78) 100%
+  );
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* All card content must sit above the overlay */
+.meal-card .meal-header,
+.meal-card .meal-body {
+  position: relative;
+  z-index: 2;
+}
+
+/* Text shadow for extra legibility on any photo */
+.meal-card .meal-type,
+.meal-card .meal-time,
+.meal-card .meal-cat,
+.meal-card .meal-row p,
+.meal-card .meal-cat-icon {
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8), 0 0 12px rgba(0,0,0,0.6);
+}
+
 
 .meal-header {
   display: flex;
@@ -796,9 +902,11 @@ body::before {
 
 .meal-time {
   display: block;
-  font-size: 0.75rem;
-  color: var(--c-text-muted);
-  font-weight: 500;
+  font-size: 0.82rem;
+  color: #f3f4f6; /* Müəyyən ağ tonu */
+  font-weight: 600;
+  font-family: var(--f-display);
+  letter-spacing: 0.03em;
 }
 
 .sehер-color .meal-type, .seher-color .meal-type { color: #fcd34d; }
@@ -819,25 +927,26 @@ body::before {
 .meal-row:last-child { border-bottom: none; }
 
 .meal-cat-icon {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   flex-shrink: 0;
   margin-top: 1px;
 }
 
 .meal-cat {
   display: block;
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: 0.72rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--c-text-dim);
+  color: #d1d5db; /* Daha bəlli gümüşü/ağ rəng tonu */
   margin-bottom: 2px;
 }
 
 .meal-row p {
-  font-size: 0.85rem;
-  color: var(--c-text-muted);
+  font-size: 0.88rem;
+  color: #ffffff; /* Tam bəlli ağ rəng tonu */
   line-height: 1.5;
+  font-weight: 500;
 }
 
 /* Restaurant special */
@@ -1220,51 +1329,36 @@ body::before {
 /* =====================
    UNIFORM SECTION
    ===================== */
-.uniform-wrap {
+/* single card */
+.uniform-single-wrap {
   display: flex;
-  flex-direction: column;
-  gap: var(--sp-lg);
+  justify-content: center;
 }
-.uniform-img-card {
+.uniform-single-card {
   border-radius: var(--r-lg);
   overflow: hidden;
-  padding: var(--sp-md);
+  padding: var(--sp-lg);
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-md);
 }
-.uniform-img {
+.uniform-single-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--c-gold-light);
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+.uniform-single-img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: var(--r-md);
 }
-.uniform-info-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-md);
-}
-.uniform-info-card {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-sm);
-  padding: var(--sp-sm) var(--sp-md);
-  border-radius: var(--r-md);
-}
-.uniform-color-dot {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.uniform-color-label {
-  display: block;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--c-gold-light);
-  margin-bottom: 2px;
-}
-.uniform-info-card p {
-  font-size: 0.75rem;
-  color: var(--c-text-muted);
-}
+
 
 /* =====================
    DOCTOR SECTION
@@ -1833,6 +1927,112 @@ body::before {
 }
 .hero-family-note span {
   color: var(--c-text-muted);
+}
+
+/* =====================
+   HERO PICNIC NOTE
+   ===================== */
+.hero-picnic-note {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  padding: var(--sp-sm) var(--sp-md);
+  text-align: left;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  border: 1px solid rgba(34, 197, 94, 0.32);
+  background: rgba(22, 163, 74, 0.10);
+  width: 100%;
+  max-width: 380px;
+  border-radius: var(--r-md);
+  margin-top: var(--sp-xs);
+  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.12);
+  animation: floatPiece 7s ease-in-out infinite alternate;
+}
+.hero-picnic-note strong {
+  color: #86efac;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.hero-picnic-note span {
+  color: var(--c-text-muted);
+}
+
+/* =====================
+   PICNIC CARD (Meals)
+   ===================== */
+.picnic-card {
+  margin-bottom: var(--sp-sm);
+  overflow: hidden;
+  border-color: rgba(34,197,94,0.25);
+}
+.picnic-card:hover {
+  border-color: rgba(34,197,94,0.45);
+  box-shadow: var(--shadow-glass), 0 0 28px rgba(34,197,94,0.15);
+}
+
+.picnic-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+.picnic-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.picnic-card:hover .picnic-img {
+  transform: scale(1.04);
+}
+.picnic-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,13,20,0.1) 0%, rgba(10,13,20,0.65) 100%);
+}
+.picnic-time-badge {
+  position: absolute;
+  top: var(--sp-sm);
+  right: var(--sp-sm);
+  background: rgba(10,13,20,0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(34,197,94,0.45);
+  color: #86efac;
+  font-family: var(--f-display);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--r-pill);
+  box-shadow: 0 0 14px rgba(34,197,94,0.25);
+}
+
+.picnic-body {
+  padding: var(--sp-md);
+}
+.picnic-title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-xs);
+  margin-bottom: 0.45rem;
+}
+.picnic-emoji { font-size: 1.3rem; }
+.picnic-title {
+  font-family: var(--f-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #86efac;
+}
+.picnic-desc {
+  font-size: 0.85rem;
+  color: var(--c-text-muted);
+  line-height: 1.55;
+}
+.picnic-desc strong {
+  color: var(--c-text);
+  font-weight: 600;
 }
 
 /* =====================
