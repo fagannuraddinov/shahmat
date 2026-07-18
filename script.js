@@ -387,3 +387,56 @@ document.addEventListener('DOMContentLoaded', function() {
     if (dayId) startDaySlideshows(dayId);
   }
 });
+
+// ===== FAMILY DISCOUNT MODAL TOGGLE =====
+document.addEventListener('DOMContentLoaded', () => {
+  const familyBanner = document.getElementById('hero-family-banner');
+  const familyModal = document.getElementById('familyModal');
+  const closeBtnTop = document.getElementById('modalCloseBtnTop');
+  const closeBtnBottom = document.getElementById('modalCloseBtnBottom');
+
+  if (!familyBanner || !familyModal) return;
+
+  function openModal() {
+    familyModal.classList.add('active');
+    familyModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    
+    // Focus the top close button or container for accessibility
+    if (closeBtnTop) closeBtnTop.focus();
+  }
+
+  function closeModal() {
+    familyModal.classList.remove('active');
+    familyModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; // Restore background scrolling
+    familyBanner.focus(); // Return focus to the trigger
+  }
+
+  // Open events
+  familyBanner.addEventListener('click', openModal);
+  familyBanner.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openModal();
+    }
+  });
+
+  // Close events
+  if (closeBtnTop) closeBtnTop.addEventListener('click', closeModal);
+  if (closeBtnBottom) closeBtnBottom.addEventListener('click', closeModal);
+
+  // Close when clicking outside the modal content
+  familyModal.addEventListener('click', (e) => {
+    if (e.target === familyModal) {
+      closeModal();
+    }
+  });
+
+  // Close on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && familyModal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+});

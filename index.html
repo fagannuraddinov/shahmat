@@ -58,11 +58,12 @@
           <span>Zaqatala</span>
         </div>
       </div>
-      <div class="hero-family-note glass-card-sm" id="hero-family-banner">
+      <div class="hero-family-note glass-card-sm" id="hero-family-banner" role="button" tabindex="0" aria-label="Ailə endirimi haqqında ətraflı məlumat">
+        <span class="family-badge">🏷️ Endirim</span>
         <span class="family-icon">👪</span>
         <div>
           <strong>Ailələr üçün açıq:</strong>
-          <span>İştirakçıların ailə üzvləri də bizimlə gələ bilər!</span>
+          <span>İştirakçıların ailə üzvləri də bizimlə gələ bilər! <span class="click-hint">(Ətraflı)</span></span>
         </div>
       </div>
       <div class="hero-picnic-note glass-card-sm" id="hero-picnic-banner">
@@ -1800,6 +1801,24 @@
           </svg>
           Zəng et
         </a>
+  <!-- ===== FAMILY DISCOUNT MODAL ===== -->
+  <div id="familyModal" class="modal-overlay" aria-hidden="true" role="dialog">
+    <div class="modal-container glass-card">
+      <button class="modal-close" aria-label="Bağla" id="modalCloseBtnTop">&times;</button>
+      <div class="modal-header-popup">
+        <span class="modal-icon-popup">👪</span>
+        <h3 class="modal-title-popup">Ailə Endirimi</h3>
+      </div>
+      <div class="modal-body-popup">
+        <p class="modal-text-popup">
+          Yarış iştirakçılarının valideynlərinin hər ikisi turnirə gəlmək istəyərsə, <strong>3 nəfərdən 1-i ödənişsiz</strong> olaraq turdan faydalana bilər.
+        </p>
+        <div class="modal-actions-popup">
+          <a href="https://wa.me/994103281817" target="_blank" class="modal-btn-popup modal-btn-primary-popup">
+            <span>💬</span> WhatsApp ilə Əlaqə
+          </a>
+          <button class="modal-btn-popup modal-btn-secondary-popup" id="modalCloseBtnBottom">Bağla</button>
+        </div>
       </div>
     </div>
   </div>
