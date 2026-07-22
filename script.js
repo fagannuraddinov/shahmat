@@ -1,5 +1,5 @@
-/* =============================================
-   ZAQATALA SHAHMAT YARISHI 2026
+﻿/* =============================================
+   Qusar SHAHMAT YARISHI 2026
    JavaScript — Tab switching, Parallax, Animations
    ============================================= */
 
