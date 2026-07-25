@@ -1,4 +1,4 @@
-﻿/* ============================================
+/* ============================================
    Qusar SHAHMAT YARISHI 2026
    Mobile-First CSS · Glassmorphism + Parallax
    ============================================ */
@@ -2095,7 +2095,7 @@ body::before {
 }
 
 /* =====================
-   HERO PICNIC NOTE
+   HERO EXCURSION NOTE
    ===================== */
 .hero-picnic-note {
   display: flex;
@@ -2125,7 +2125,7 @@ body::before {
 }
 
 /* =====================
-   PICNIC CARD (Meals)
+   EXCURSION CARD (Meals)
    ===================== */
 .picnic-card {
   margin-bottom: var(--sp-sm);
