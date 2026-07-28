@@ -2154,6 +2154,22 @@ body::before {
 .picnic-card:hover .picnic-img {
   transform: scale(1.04);
 }
+.picnic-img-wrap .meal-bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.9s ease, transform 0.5s ease;
+  z-index: 0;
+}
+.picnic-img-wrap .meal-bg-slide.visible {
+  opacity: 1;
+}
+.picnic-card:hover .meal-bg-slide {
+  transform: scale(1.04);
+}
 .picnic-img-overlay {
   position: absolute;
   inset: 0;

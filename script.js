@@ -418,3 +418,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// ===== RANCHO EXCURSION PICNIC CARD SLIDESHOW =====
+document.addEventListener('DOMContentLoaded', () => {
+  const picnicWrap = document.querySelector('#picnic-09 .picnic-img-wrap');
+  if (picnicWrap) {
+    const slides = picnicWrap.querySelectorAll('.meal-bg-slide');
+    if (slides.length > 0) {
+      let currentIdx = 0;
+      setInterval(() => {
+        slides[currentIdx].classList.remove('visible');
+        currentIdx = (currentIdx + 1) % slides.length;
+        slides[currentIdx].classList.add('visible');
+      }, 2300);
+    }
+  }
+});
