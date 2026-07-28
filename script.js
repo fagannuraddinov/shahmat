@@ -1,4 +1,4 @@
-﻿/* =============================================
+/* =============================================
    Qusar SHAHMAT YARISHI 2026
    JavaScript — Tab switching, Parallax, Animations
    ============================================= */
@@ -277,36 +277,16 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// ===== HOUSE GALLERY LOGIC =====
-const houseImages = {
-  girls: Array.from({ length: 26 }, (_, i) => `house 1/MaMHouse-${i + 1}.jpg`),
-  boys: Array.from({ length: 24 }, (_, i) => `house 2/ScMHouse-${i + 1}.jpg`)
-};
-
-const houseIndexes = {
-  girls: 0,
-  boys: 0
-};
-
-window.updateHouseImage = function(type) {
-  const imgEl = document.getElementById(`house-${type}-img`);
-  const counterEl = document.getElementById(`${type}-current`);
-  if (imgEl && counterEl) {
-    const idx = houseIndexes[type];
-    imgEl.src = houseImages[type][idx];
-    counterEl.textContent = idx + 1;
-  }
-};
-
-window.nextHouseImage = function(type) {
-  houseIndexes[type] = (houseIndexes[type] + 1) % houseImages[type].length;
-  window.updateHouseImage(type);
-};
-
-window.prevHouseImage = function(type) {
-  houseIndexes[type] = (houseIndexes[type] - 1 + houseImages[type].length) % houseImages[type].length;
-  window.updateHouseImage(type);
-};
+// ===== HOUSE VIDEO LOGIC =====
+document.addEventListener('DOMContentLoaded', () => {
+  const houseVideos = document.querySelectorAll('.gallery-active-video');
+  houseVideos.forEach(video => {
+    video.muted = true;
+    video.play().catch(err => {
+      console.log('Video autoplay prevented:', err);
+    });
+  });
+});
 
 
 // ===== FOOD IMAGE SLIDESHOW =====
